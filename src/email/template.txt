@@ -1,0 +1,7 @@
+Hello %guardian1_formality% %guardian1_lastname% and/or %guardian2_formality% %guardian2_lastname%.
+
+Your child, %student_name%, is currently taking more challenging courses than what they were recommended for. 
+
+%student_name%'s advanced course list:
+%student_adv_classes%
+
