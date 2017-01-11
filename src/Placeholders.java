@@ -22,7 +22,8 @@ public class Placeholders {
 	 * Adds all the student related placeholders.
 	 */
 	public void addStudentPlaceholders() {
-		addPlaceholder("%student_name%");
+		addPlaceholder("%student_firstname%");
+		addPlaceholder("%student_lastname%");
 		addPlaceholder("%student_id%");
 		addPlaceholder("%student_adv_classes%");
 		addPlaceholder("%student_email%");
@@ -34,6 +35,12 @@ public class Placeholders {
 	public void addParentPlaceholders() {
 		addPlaceholder("%guardian1_email%");
 		addPlaceholder("%guardian2_email%");
+		addPlaceholder("%guardian1_firstname%");
+		addPlaceholder("%guardian2_firstname%");
+		addPlaceholder("%guardian1_lastname%");
+		addPlaceholder("%guardian2_lastname%");
+		addPlaceholder("%guardian1_formality%");
+		addPlaceholder("%guardian2_formality%");
 	}
 
 }
