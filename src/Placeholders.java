@@ -1,46 +1,19 @@
-import java.util.ArrayList;
-
 public class Placeholders {
-	ArrayList<String> placeholders;
-
-	public Placeholders() {
-		placeholders = new ArrayList<String>();
-
-	}
-
 	/***
-	 * Adds a placeholder to the list of placeholders.
-	 * 
-	 * @param placeholder
-	 *            - %example_placeholder_format%
+	 * A class that contains all the placeholder constants for replaceAll in the
+	 * template.txt
 	 */
-	public void addPlaceholder(String placeholder) {
-		placeholders.add(placeholder);
-	}
-
-	/***
-	 * Adds all the student related placeholders.
-	 */
-	public void addStudentPlaceholders() {
-		addPlaceholder("%student_firstname%");
-		addPlaceholder("%student_lastname%");
-		addPlaceholder("%student_id%");
-		addPlaceholder("%student_adv_classes%");
-		addPlaceholder("%student_email%");
-	}
-
-	/***
-	 * Adds all the parent/guardian related placeholders.
-	 */
-	public void addParentPlaceholders() {
-		addPlaceholder("%guardian1_email%");
-		addPlaceholder("%guardian2_email%");
-		addPlaceholder("%guardian1_firstname%");
-		addPlaceholder("%guardian2_firstname%");
-		addPlaceholder("%guardian1_lastname%");
-		addPlaceholder("%guardian2_lastname%");
-		addPlaceholder("%guardian1_formality%");
-		addPlaceholder("%guardian2_formality%");
-	}
-
+	public static final String STUDENT_FIRST_NAME = "%student_firstname%";
+	public static final String STUDENT_LAST_NAME = "%student_lastname%";
+	public static final String STUDENT_ID = "%student_id%";
+	public static final String STUDENT_ADV_CLASSES = "%student_advclasses%";
+	public static final String STUDENT_EMAIL = "%student_email";
+	public static final String GUARDIAN1_FIRST_NAME = "%guardian1_firstname%";
+	public static final String GUARDIAN1_LAST_NAME = "%guardian1_lastname%";
+	public static final String GUARDIAN1_EMAIL = "%guardian1_email%";
+	public static final String GUARDIAN1_FORMALITY = "%guardian1_formality";
+	public static final String GUARDIAN2_FIRST_NAME = "%guardian2_firstname%";
+	public static final String GUARDIAN2_LAST_NAME = "%guardian2_lastname%";
+	public static final String GUARDIAN2_EMAIL = "%guardian2_email%";
+	public static final String GUARDIAN2_FORMALITY = "%guardian2_formality";
 }
