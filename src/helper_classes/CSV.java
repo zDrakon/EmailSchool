@@ -19,6 +19,7 @@ public class CSV {
 		int cols = columnNames.length; // Length of the first row
 
 		this.setData(new String[rows][cols]);
+
 	}
 
 	/***
@@ -37,6 +38,64 @@ public class CSV {
 	 */
 	public void setData(String[][] data) {
 		this.data = data;
+	}
+
+	/***
+	 * Sets a specific String value to a coord of 2D Data Array.
+	 * 
+	 * @param r
+	 * @param c
+	 * @param value
+	 */
+	public void setEntry(int r, int c, String value) {
+		data[r][c] = value;
+	}
+
+	/***
+	 * Returns the contents of a specified column.
+	 * 
+	 * @param colIndex
+	 *            - Index of a column
+	 * @return
+	 */
+	public String[] getColumn(int colIndex) {
+		int colLength = data.length;
+		int rowLength = data[0].length;
+
+		String[] output = new String[colLength];
+
+		for (int r = 0; r < rowLength; r++) {
+			output[r] = data[r][colIndex];
+		}
+
+		return output;
+	}
+
+	/***
+	 * Overridden method to find the column index of a specified columnName
+	 * 
+	 * @param columnName
+	 * @return
+	 */
+	public String[] getColumn(String columnName) {
+		int colIndex = 0;
+		for (int i = 0; i < columnNames.length; i++) {
+			if (columnNames[i].equals(columnName)) {
+				colIndex = i;
+			}
+		}
+
+		return getColumn(colIndex);
+	}
+
+	/***
+	 * Returns a row with specified index of desired row.
+	 * 
+	 * @param rowIndex
+	 * @return
+	 */
+	public String[] getRow(int rowIndex) {
+		return data[rowIndex];
 	}
 
 }
