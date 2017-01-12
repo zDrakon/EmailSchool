@@ -2,6 +2,7 @@ package helper_classes;
 
 public class CSV {
 	private String[][] data;
+	private String[] columnNames;
 
 	/***
 	 * Converts a .csv file into a CSV Object for code manipulation.
@@ -12,9 +13,10 @@ public class CSV {
 	public CSV(String filepath) {
 		String dataString = FileIO.readFileAsString(filepath);
 		String[] lines = dataString.split("\n");
+		columnNames = lines[0].split(",");
 
 		int rows = lines.length; // Length of the first column
-		int cols = lines[0].length(); // Length of the first row
+		int cols = columnNames.length; // Length of the first row
 
 		this.setData(new String[rows][cols]);
 	}
