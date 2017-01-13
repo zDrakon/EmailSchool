@@ -4,6 +4,12 @@ import helper_classes.CSV;
 
 public class CSVManipulator {
 
+	/***
+	 * Returns HashMap of student data from a single file
+	 * 
+	 * @param filepath
+	 * @return
+	 */
 	public static HashMap<String, Student> getStudentsFromFile(String filepath) {
 		CSV csv = new CSV(filepath);
 		Student s = new Student();
@@ -21,14 +27,19 @@ public class CSVManipulator {
 			s.setlastName(columnNames[2]);
 			s.setDesiredClass(columnNames[3]);
 			s.setFinalGradeOfPreviousClass(columnNames[4]);
-
 		}
 
 		return students;
 
 	}
 
-	public static HashMap<String, Student> addStudentDatas(String filepath) {
+	/***
+	 * Returns a HashMap of all student data from multiple files.
+	 * 
+	 * @param filepath
+	 * @return
+	 */
+	public static HashMap<String, Student> addStudentDatas(String[] filepaths) {
 		return null;
 	}
 }
