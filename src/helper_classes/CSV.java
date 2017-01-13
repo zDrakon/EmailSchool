@@ -98,4 +98,13 @@ public class CSV {
 		return data[rowIndex];
 	}
 
+	/***
+	 * Returns all columnNames
+	 * 
+	 * @return
+	 */
+	public String[] getColumnNames() {
+		return columnNames;
+	}
+
 }
