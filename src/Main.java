@@ -11,17 +11,21 @@ import javax.mail.internet.MimeMessage;
 import helper_classes.FileIO;
 
 public class Main {
-	private static String USER_NAME = ""; // GMail user name (just the part
-											// before "@gmail.com")
-	private static String PASSWORD = "********"; // GMail password
-	private static String RECIPIENT = "lizard.bill@myschool.edu";
-	private static String FILE_PATH_TEMPLATE = "email/template.html";
+	private static String USER_NAME = ""; // GMail user name (just the
+											// part
+	// before "@gmail.com")
+	private static String PASSWORD = ""; // GMail password
+	private static String RECIPIENT = "";
+
+	private static String SUBJECT_TITLE = "testing";
+
+	private static String FILE_PATH_TEMPLATE = "src/email/template.html";
 
 	public static void main(String[] args) {
 		String from = USER_NAME;
 		String pass = PASSWORD;
 		String[] to = { RECIPIENT }; // list of recipient email addresses
-		String subject = "Java send mail example";
+		String subject = SUBJECT_TITLE;
 
 		String body = FileIO.readFileAsString(FILE_PATH_TEMPLATE);
 
