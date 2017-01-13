@@ -10,7 +10,7 @@ import javax.mail.internet.MimeMessage;
 
 import helper_classes.FileIO;
 
-public class Main {
+public class EmailTester {
 	private static String USER_NAME = ""; // GMail user name (just the
 											// part
 	// before "@gmail.com")
