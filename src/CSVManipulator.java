@@ -22,9 +22,9 @@ public class CSVManipulator {
 		// Key will be id, value is Student object
 		for (String id : csv.getColumn(columnNames[0])) {
 			students.put(id, s);
-			s.setId(id);
+			s.setID(id);
 			s.setFirstName(columnNames[1]);
-			s.setlastName(columnNames[2]);
+			s.setLastName(columnNames[2]);
 			s.setDesiredClass(columnNames[3]);
 			s.setFinalGradeOfPreviousClass(columnNames[4]);
 		}
