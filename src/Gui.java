@@ -1,22 +1,15 @@
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-
-import com.jgoodies.forms.factories.DefaultComponentFactory;
+import javax.swing.JSeparator;
 
 public class Gui {
 
 	private JFrame frame;
-	private JTextField emailAddressField;
-	private JPasswordField passwordField;
-	private JPanel questionPanel;
-	private JLabel question1Title;
 
 	/**
 	 * Launch the application.
@@ -46,44 +39,55 @@ public class Gui {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 549, 371);
+		frame.setBounds(100, 100, 549, 647);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
-		JPanel emailInfoPanel = new JPanel();
-		emailInfoPanel.setBounds(18, 20, 226, 69);
-		emailInfoPanel.setBorder(null);
-		frame.getContentPane().add(emailInfoPanel);
-		emailInfoPanel.setLayout(null);
+		JPanel studentDescHeader = new JPanel();
+		studentDescHeader.setBounds(6, 6, 537, 41);
+		frame.getContentPane().add(studentDescHeader);
+		studentDescHeader.setLayout(null);
 
-		emailAddressField = new JTextField();
-		emailAddressField.setHorizontalAlignment(SwingConstants.CENTER);
-		emailAddressField.setBounds(0, 16, 226, 26);
-		emailInfoPanel.add(emailAddressField);
-		emailAddressField.setToolTipText("Insert your email here");
-		emailAddressField.setText("example@gmail.com");
-		emailAddressField.setColumns(10);
+		JLabel studentNameLabel = new JLabel("STUDENT NAME HERE");
+		studentNameLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+		studentNameLabel.setBounds(6, 6, 178, 29);
+		studentDescHeader.add(studentNameLabel);
 
-		passwordField = new JPasswordField();
-		passwordField.setHorizontalAlignment(SwingConstants.CENTER);
-		passwordField.setFont(new Font("Lucida Grande", Font.PLAIN, 12));
-		passwordField.setBounds(0, 43, 226, 26);
-		passwordField.setText("password");
-		emailInfoPanel.add(passwordField);
-		passwordField.setToolTipText("Insert your email password here");
+		JLabel lblCourseNameHere = new JLabel("COURSE NAME HERE");
+		lblCourseNameHere.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+		lblCourseNameHere.setBounds(286, 6, 245, 29);
+		studentDescHeader.add(lblCourseNameHere);
 
-		JLabel lblEnterYourEmail = DefaultComponentFactory.getInstance().createTitle("ENTER YOUR EMAIL INFO BELOW");
-		lblEnterYourEmail.setHorizontalAlignment(SwingConstants.CENTER);
-		lblEnterYourEmail.setBounds(0, 0, 226, 16);
-		emailInfoPanel.add(lblEnterYourEmail);
+		JSeparator separator1 = new JSeparator();
+		separator1.setBackground(Color.BLACK);
+		separator1.setForeground(Color.BLACK);
+		separator1.setBounds(6, 47, 537, 12);
+		frame.getContentPane().add(separator1);
 
-		questionPanel = new JPanel();
-		questionPanel.setBounds(18, 119, 226, 159);
-		frame.getContentPane().add(questionPanel);
-		questionPanel.setLayout(null);
+		JPanel panel = new JPanel();
+		panel.setBounds(6, 59, 537, 31);
+		frame.getContentPane().add(panel);
+		panel.setLayout(null);
 
-		question1Title = new JLabel("Example question here");
-		question1Title.setBounds(6, 6, 214, 16);
-		questionPanel.add(question1Title);
+		JLabel P1GradeLabel = new JLabel("Proress Report 1: GRADE");
+		P1GradeLabel.setBounds(6, 5, 66, 16);
+		panel.add(P1GradeLabel);
+		P1GradeLabel.setBackground(Color.WHITE);
+
+		JLabel P2GradeLabel = new JLabel("Progress Report 2: GRADE");
+		P2GradeLabel.setBounds(162, 5, 199, 16);
+		panel.add(P2GradeLabel);
+		P2GradeLabel.setBackground(Color.WHITE);
+
+		JLabel S1GradeLabel = new JLabel("Semester 1: GRADE");
+		S1GradeLabel.setBounds(405, 5, 66, 16);
+		panel.add(S1GradeLabel);
+		S1GradeLabel.setBackground(Color.WHITE);
+
+		JSeparator separator = new JSeparator();
+		separator.setForeground(Color.BLACK);
+		separator.setBackground(Color.BLACK);
+		separator.setBounds(6, 91, 537, 12);
+		frame.getContentPane().add(separator);
 	}
 }
