@@ -13,7 +13,7 @@ import javax.swing.SwingConstants;
 
 public class MainGUI {
 
-	private JFrame frame;
+	JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -104,8 +104,8 @@ public class MainGUI {
 		lastYearLabel.setBounds(6, 6, 72, 16);
 		lastYearGradePanel.add(lastYearLabel);
 
-		JLabel classNameLabel = new JLabel("CLASS NAME HERE:");
-		classNameLabel.setBounds(90, 6, 125, 16);
+		JLabel classNameLabel = new JLabel("CLASS NAME HERE >");
+		classNameLabel.setBounds(90, 6, 139, 16);
 		lastYearGradePanel.add(classNameLabel);
 
 		JLabel S1Label = new JLabel("Semester 1: GRADE");
