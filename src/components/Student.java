@@ -1,3 +1,4 @@
+package components;
 
 public class Student {
 	private String name;

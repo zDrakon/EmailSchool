@@ -1,3 +1,4 @@
+package components;
 public class Placeholders {
 	/***
 	 * A class that contains all the placeholder constants for replaceAll in the
