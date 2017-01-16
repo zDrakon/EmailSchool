@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
@@ -50,7 +51,8 @@ public class ReasonGUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 549, 497);
+		frame.setResizable(false);
+		frame.setBounds(100, 100, 549, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -125,43 +127,89 @@ public class ReasonGUI {
 		lblReasons.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
 
 		JCheckBox chckbxClassMovesMuch = new JCheckBox("DESIRED CLASS moves much faster");
-		chckbxClassMovesMuch.setBounds(0, 20, 537, 23);
+		chckbxClassMovesMuch.setBounds(0, 20, 252, 23);
 		reasonPanel.add(chckbxClassMovesMuch);
 
 		JCheckBox chckbxClassRequires = new JCheckBox("DESIRED CLASS requires complete mastery of PREV CLASS");
-		chckbxClassRequires.setBounds(0, 40, 537, 23);
+		chckbxClassRequires.setBounds(0, 40, 393, 23);
 		reasonPanel.add(chckbxClassRequires);
 
 		JCheckBox chckbxOther = new JCheckBox("Other");
 		chckbxOther.setBounds(0, 60, 79, 23);
 		reasonPanel.add(chckbxOther);
 
-		JPanel panel = new JPanel();
-		panel.setBounds(6, 247, 537, 55);
-		frame.getContentPane().add(panel);
-		panel.setLayout(null);
-
-		JLabel recommendationLabel = new JLabel("Recommendation:");
-		recommendationLabel.setBounds(0, 0, 151, 22);
-		panel.add(recommendationLabel);
-		recommendationLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-
-		JLabel wouldRecommendLabel = new JLabel("I recommend you to take ");
-		wouldRecommendLabel.setBounds(0, 25, 161, 16);
-		panel.add(wouldRecommendLabel);
-
-		inputClassTextField = new JTextField();
-		inputClassTextField.setBounds(160, 20, 130, 26);
-		panel.add(inputClassTextField);
-		inputClassTextField.setHorizontalAlignment(SwingConstants.CENTER);
-		inputClassTextField.setText("Insert class here");
-		inputClassTextField.setColumns(10);
-
 		JSeparator separator3 = new JSeparator();
 		separator3.setForeground(Color.BLACK);
 		separator3.setBackground(Color.BLACK);
 		separator3.setBounds(6, 307, 537, 12);
 		frame.getContentPane().add(separator3);
+
+		JPanel recommendationPanel = new JPanel();
+		recommendationPanel.setBounds(6, 247, 537, 55);
+		frame.getContentPane().add(recommendationPanel);
+		recommendationPanel.setLayout(null);
+
+		JLabel recommendationLabel = new JLabel("Recommendation:");
+		recommendationLabel.setBounds(0, 0, 151, 22);
+		recommendationPanel.add(recommendationLabel);
+		recommendationLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+
+		JLabel wouldRecommendLabel = new JLabel("I recommend you to take ");
+		wouldRecommendLabel.setBounds(0, 25, 161, 16);
+		recommendationPanel.add(wouldRecommendLabel);
+
+		inputClassTextField = new JTextField();
+		inputClassTextField.setBounds(160, 20, 130, 26);
+		recommendationPanel.add(inputClassTextField);
+		inputClassTextField.setHorizontalAlignment(SwingConstants.CENTER);
+		inputClassTextField.setText("Insert class here");
+		inputClassTextField.setColumns(10);
+
+		JPanel emailSpecificationsPanel = new JPanel();
+		emailSpecificationsPanel.setBounds(6, 331, 537, 241);
+		frame.getContentPane().add(emailSpecificationsPanel);
+		emailSpecificationsPanel.setLayout(null);
+
+		JLabel emailSpecLabel = new JLabel("Email Specifications:");
+		emailSpecLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+		emailSpecLabel.setBounds(0, 0, 166, 22);
+		emailSpecificationsPanel.add(emailSpecLabel);
+
+		JLabel emailToBeSentLabel = new JLabel("Email to be sent:");
+		emailToBeSentLabel.setBounds(0, 26, 105, 16);
+		emailSpecificationsPanel.add(emailToBeSentLabel);
+
+		JTextArea txtrTemplatetxtWouldGo = new JTextArea();
+		txtrTemplatetxtWouldGo.setWrapStyleWord(true);
+		txtrTemplatetxtWouldGo.setLineWrap(true);
+		txtrTemplatetxtWouldGo.setText(
+				"template.txt would go here with filled in placeholders and such and teacher can edit the email if need be.");
+		txtrTemplatetxtWouldGo.setBounds(0, 54, 531, 114);
+		emailSpecificationsPanel.add(txtrTemplatetxtWouldGo);
+
+		JLabel lblSendEmailTo = new JLabel("Send email to:");
+		lblSendEmailTo.setBounds(0, 180, 95, 16);
+		emailSpecificationsPanel.add(lblSendEmailTo);
+
+		JCheckBox counselorCheckBox = new JCheckBox("Counselor");
+		counselorCheckBox.setSelected(true);
+		counselorCheckBox.setBounds(0, 200, 105, 23);
+		emailSpecificationsPanel.add(counselorCheckBox);
+
+		JCheckBox parentsCheckBox = new JCheckBox("Parents");
+		parentsCheckBox.setSelected(true);
+		parentsCheckBox.setBounds(117, 200, 105, 23);
+		emailSpecificationsPanel.add(parentsCheckBox);
+
+		JCheckBox studentCheckBox = new JCheckBox("Student");
+		studentCheckBox.setSelected(true);
+		studentCheckBox.setBounds(219, 200, 105, 23);
+		emailSpecificationsPanel.add(studentCheckBox);
+
+		JCheckBox ccYourselfCheckBox = new JCheckBox("cc: Yourself");
+		ccYourselfCheckBox.setSelected(true);
+		ccYourselfCheckBox.setBounds(336, 200, 124, 23);
+		emailSpecificationsPanel.add(ccYourselfCheckBox);
 
 		chckbxOther.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
