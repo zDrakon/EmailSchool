@@ -1,4 +1,5 @@
 package components;
+
 import java.util.HashMap;
 
 import helper_classes.CSV;
@@ -13,34 +14,33 @@ public class CSVManipulator {
 	 */
 	public static HashMap<String, Student> getStudentsFromFile(String filepath) {
 		CSV csv = new CSV(filepath);
-		Student s = new Student();
 		HashMap<String, Student> students = new HashMap<String, Student>();
 
 		String[] columnNames = csv.getColumnNames();
-		// Assume {id, firstname, lastname, desiredClass,
+		// Assume {id, firstname, lastname, desiredclass,
 		// finalGradeOfPreviousClass}
 
 		// Key will be id, value is Student object
-		for (String id : csv.getColumn(columnNames[0])) {
-			students.put(id, s);
+		int row = 0;
+		for (String id : csv.getColumn("id")) {
+			Student s = new Student();
 			s.setID(id);
-			s.setFirstName(columnNames[1]);
-			s.setLastName(columnNames[2]);
-			s.setDesiredClass(columnNames[3]);
-			s.setFinalGradeOfPreviousClass(columnNames[4]);
+			s.setFirstName(csv.getColumn("firstname")[row]);
+			s.setLastName(csv.getColumn("lastname")[row]);
+			s.setDesiredClass(csv.getColumn("desiredclass")[row]);
+			s.setPreviousClassGrade(csv.getColumn("previousclassgrade")[row]);
+			students.put(id, s);
 		}
 
 		return students;
 
 	}
 
-	/***
-	 * Returns a HashMap of all student data from multiple files.
-	 * 
-	 * @param filepath
-	 * @return
-	 */
-	public static HashMap<String, Student> addStudentDatas(String[] filepaths) {
+	public static HashMap<String, Student> addStudentDatas(HashMap<String, Student> students, String filepath) {
+		CSV csv = new CSV(filepath);
+		
+		String[] columnNames = csv.getColumnNames();
+		
 		return null;
 	}
 }
