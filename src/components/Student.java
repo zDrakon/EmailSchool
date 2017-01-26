@@ -6,7 +6,7 @@ public class Student {
 	private String lastName;
 	private int ID;
 	private String desiredClass;
-	private String finalGradeOfPreviousClass;
+	private String previousClassGrade;
 
 	public String getDesiredClass() {
 		return desiredClass;
@@ -16,12 +16,12 @@ public class Student {
 		this.desiredClass = desiredClass;
 	}
 
-	public String getFinalGradeOfPreviousClass() {
-		return finalGradeOfPreviousClass;
+	public String getPreviousClassGrade() {
+		return previousClassGrade;
 	}
 
-	public void setFinalGradeOfPreviousClass(String finalGradeOfPreviousClass) {
-		this.finalGradeOfPreviousClass = finalGradeOfPreviousClass;
+	public void setPreviousClassGrade(String previousClassGrade) {
+		this.previousClassGrade = previousClassGrade;
 	}
 
 	public String getFirstName() {
